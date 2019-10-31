@@ -90,9 +90,45 @@ summary(BFE)
 
 ###############################################################################################################################
 
+#We can see that seasonality plays a role in the number of cases sold.
+#It can be said that, holding constant own price, sales tend to increase in the later 
+#months of the year when compared to the base category January. 
+#This is consistent with the general trend of the wine market. 
+#Wine sales tend to increase during the October, November, December months (O,N,D).
 
+#     .variable    .stat    Model 1
+#   (Intercept) Estimate 365.445***
+#                Std Err    [9.746]
+#     Price_BFE Estimate -27.985***
+#                Std Err    [1.033]
+#       month_2 Estimate   8.293***
+#                Std Err    [2.414]
+#       month_3 Estimate   7.732***
+#                Std Err    [2.638]
+#       month_4 Estimate  20.817***
+#                Std Err    [2.664]
+#       month_5 Estimate  24.414***
+#                Std Err    [2.885]
+#       month_6 Estimate   8.825***
+#                Std Err    [2.939]
+#       month_7 Estimate   7.666***
+#                Std Err    [2.357]
+#       month_8 Estimate  18.371***
+#                Std Err    [2.497]
+#       month_9 Estimate  24.436***
+#                Std Err    [2.631]
+#      month_10 Estimate  21.587***
+#                Std Err    [2.607]
+#      month_11 Estimate  23.001***
+#                Std Err    [2.626]
+#      month_12 Estimate  20.380***
+#                Std Err    [2.484]
+#                      N       1560
+#                     R2      0.631
+#                 adj R2      0.628
+#                    AIC  13732.827
 
-
+###############################################################################################################################
 
 
 
