@@ -1,36 +1,46 @@
-# History files
-.Rhistory
-.Rapp.history
+###############################################################################################################################
+#wine pricing data 
+#The following data consists of weekly retail scanner data on fifteen 
+#brands of wine sold in the US. The data is from Nielsen and spans from July 4th, 2009 to June 25th, 2011.
+wine_pricing <- read.csv('wine_pricing.csv')
 
-# Session Data files
-.RData
+#columns and rows look good
+#many different brands, and the prices of each extracted out and turned into 
+head(wine_pricing)
 
-# Example code in package build process
-*-Ex.R
+attach(wine_pricing)
+###############################################################################################################################
+#analysis focusing on BFE winery, pricing, sales, predicted values, and data visualizations.
 
-# Output files from R CMD build
-/*.tar.gz
+#plotting the law of demand for BFE (remains to be slightly unnamed)
+BFE_demand <- ggplot(wine_pricing, aes(Price_BFE, cases_BFE)) + geom_point() + labs(title = 'Simple Linear Estimate of BFE Demand', 
+x='Price per Bottle', y='Cases Sold')
 
-# Output files from R CMD check
-/*.Rcheck/
+print(BFE_demand)
+#the law of demand holds, as price increases, the amount of cases purchased decreases. 
+barfill <- 
+price_hist <- ggplot(wine_pricing, aes(x=Price_BFE)) +
+  geom_histogram(aes(y = ..density..), binwidth = .2) + 
+  scale_x_continuous(name = "Price per Bottle",
+                     breaks = seq(6.5, 10, .5),
+                     limits=c(6.5, 10)) +
+  scale_y_continuous(name = "Percentage") +
+  ggtitle("Distribution of BFE Price") + 
+  colour = barlines, fill = barfill)
 
-# RStudio files
-.Rproj.user/
 
-# produced vignettes
-vignettes/*.html
-vignettes/*.pdf
 
-# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
-.httr-oauth
+price_hist
 
-# knitr and R markdown default cache directories
-/*_cache/
-/cache/
 
-# Temporary files created by R markdown
-*.utf8.md
-*.knit.md
 
-# Shiny token, see https://shiny.rstudio.com/articles/shinyapps.html
-rsconnect/
+
+
+
+
+
+
+
+
+
+
